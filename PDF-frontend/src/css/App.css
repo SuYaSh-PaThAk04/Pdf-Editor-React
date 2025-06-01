@@ -75,26 +75,52 @@ button:focus {
 }
 
 .pdf-container {
- .pdf-container {
   display: flex;
   flex-direction: column;
-  align-items: center; /* centers children horizontally */
-  gap: 40px;
-  padding: 30px;
-  width: 100%;
-  max-width: 640px; /* optional max width to limit wide screens */
-  margin: 0 auto; /* centers container itself */
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
 }
 
-}
 
 canvas {
-  border: 2px solid #90caf9;
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: auto;
+  z-index: 10; 
 }
 
 canvas:hover {
   transform: scale(1.01);
+}
+.pdf-container canvas {
+  z-index: 10;
+  position: absolute;
+  pointer-events: auto;
+}
+
+.SaveBtn{
+   padding: 12px 20px;
+  background-color: #42a5f5;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(66, 165, 245, 0.3);
+}
+.SaveBtn button:hover {
+  background-color: #1e88e5;
+  transform: scale(1.05);
+}
+
+.SaveBtn button:active {
+  transform: scale(0.97);
+}
+
+SaveBtn:focus {
+  outline: none;
 }
